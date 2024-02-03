@@ -1,4 +1,4 @@
 <div>
     Filters - Input Text
-    <livewire:user-table/>
+    <livewire:filters.input-text/>
 </div>

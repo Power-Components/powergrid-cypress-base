@@ -6,7 +6,6 @@ use App\Traits\Datasources;
 use App\Traits\PowerGridSeeder;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Carbon;
-use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Schema;
 use PowerComponents\LivewirePowerGrid\Column;
 use PowerComponents\LivewirePowerGrid\Facades\Filter;
@@ -16,7 +15,7 @@ use PowerComponents\LivewirePowerGrid\PowerGrid;
 use PowerComponents\LivewirePowerGrid\PowerGridComponent;
 use PowerComponents\LivewirePowerGrid\PowerGridFields;
 
-final class InputText extends PowerGridComponent
+final class Number extends PowerGridComponent
 {
     use PowerGridSeeder;
 
@@ -25,7 +24,7 @@ final class InputText extends PowerGridComponent
         Schema::create('datasources', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('email');
+            $table->float('calories');
             $table->timestamps();
         });
     }
@@ -33,11 +32,16 @@ final class InputText extends PowerGridComponent
     private function getList(): array
     {
         return [
-            ['name' => 'Luan', 'email' => 'luanfreitasdev@fakemail.com'],
-            ['name' => 'Daniel', 'email' => 'dansysanalyst@fakemail.com'],
-            ['name' => 'Claudio', 'email' => 'claudio@fakemail.com'],
-            ['name' => 'Vitor', 'email' => 'vitao@fakemail.com'],
-            ['name' => 'Tio Jobs', 'email' => 'tiojobs'],
+            ['name' => 'Spicy Tofu Stir Fry', 'calories' => 440, 'created_at' => now()],
+            ['name' => 'Quinoa Salad with Avocado', 'calories' => 200, 'created_at' => now()],
+            ['name' => 'Mango Chicken Curry', 'calories' => 380, 'created_at' => now()],
+            ['name' => 'Grilled Salmon with Lemon Dill Sauce', 'calories' => 320, 'created_at' => now()],
+            ['name' => 'Vegetarian Buddha Bowl', 'calories' => 280, 'created_at' => now()],
+            ['name' => 'Pasta Primavera', 'calories' => 420, 'created_at' => now()],
+            ['name' => 'Blueberry Almond Smoothie Bowl', 'calories' => 180, 'created_at' => now()],
+            ['name' => 'Grilled Vegetable Wrap', 'calories' => 250, 'created_at' => now()],
+            ['name' => 'Chocolate Avocado Mousse', 'calories' => 350, 'created_at' => now()],
+            ['name' => 'Caprese Salad', 'calories' => 300, 'created_at' => now()],
         ];
     }
 
@@ -72,7 +76,7 @@ final class InputText extends PowerGridComponent
         return PowerGrid::fields()
             ->add('id')
             ->add('name')
-            ->add('email')
+            ->add('calories')
             ->add('created_at_formatted', function ($entry) {
                 return Carbon::parse($entry->created_at)->format('d/m/Y');
             });
@@ -89,7 +93,7 @@ final class InputText extends PowerGridComponent
                 ->searchable()
                 ->sortable(),
 
-            Column::make('E-mail', 'email')
+            Column::make('Calories', 'calories')
                 ->sortable(),
 
             Column::make('Created', 'created_at_formatted'),
@@ -99,8 +103,7 @@ final class InputText extends PowerGridComponent
     public function filters(): array
     {
         return [
-            Filter::inputText('name'),
-            Filter::inputText('email'),
+            Filter::number('calories'),
         ];
     }
 }
