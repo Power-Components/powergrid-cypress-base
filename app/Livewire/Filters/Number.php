@@ -32,16 +32,16 @@ final class Number extends PowerGridComponent
     private function getList(): array
     {
         return [
-            ['name' => 'Spicy Tofu Stir Fry', 'calories' => 440, 'created_at' => now()],
-            ['name' => 'Quinoa Salad with Avocado', 'calories' => 200, 'created_at' => now()],
-            ['name' => 'Mango Chicken Curry', 'calories' => 380, 'created_at' => now()],
-            ['name' => 'Grilled Salmon with Lemon Dill Sauce', 'calories' => 320, 'created_at' => now()],
-            ['name' => 'Vegetarian Buddha Bowl', 'calories' => 280, 'created_at' => now()],
-            ['name' => 'Pasta Primavera', 'calories' => 420, 'created_at' => now()],
-            ['name' => 'Blueberry Almond Smoothie Bowl', 'calories' => 180, 'created_at' => now()],
-            ['name' => 'Grilled Vegetable Wrap', 'calories' => 250, 'created_at' => now()],
-            ['name' => 'Chocolate Avocado Mousse', 'calories' => 350, 'created_at' => now()],
-            ['name' => 'Caprese Salad', 'calories' => 300, 'created_at' => now()],
+            ['name' => 'Spicy Tofu Stir Fry', 'calories' => 130, 'created_at' => now()],
+            ['name' => 'Quinoa Salad with Avocado', 'calories' => 230, 'created_at' => now()],
+            ['name' => 'Mango Chicken Curry', 'calories' => 330, 'created_at' => now()],
+            ['name' => 'Grilled Salmon with Lemon Dill Sauce', 'calories' => 430, 'created_at' => now()],
+            ['name' => 'Vegetarian Buddha Bowl', 'calories' => 530, 'created_at' => now()],
+            ['name' => 'Pasta Primavera', 'calories' => 630, 'created_at' => now()],
+            ['name' => 'Blueberry Almond Smoothie Bowl', 'calories' => 730, 'created_at' => now()],
+            ['name' => 'Grilled Vegetable Wrap', 'calories' => 830, 'created_at' => now()],
+            ['name' => 'Chocolate Avocado Mousse', 'calories' => 930, 'created_at' => now()],
+            ['name' => 'Caprese Salad', 'calories' => 1030, 'created_at' => now()],
         ];
     }
 
