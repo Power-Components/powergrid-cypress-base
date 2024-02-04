@@ -3,10 +3,9 @@
 namespace App\Livewire\Filters;
 
 use App\Traits\Datasources;
-use App\Traits\PowerGridSeeder;
+use App\Traits\InitialState;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Carbon;
-use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Schema;
 use PowerComponents\LivewirePowerGrid\Column;
 use PowerComponents\LivewirePowerGrid\Facades\Filter;
@@ -18,7 +17,7 @@ use PowerComponents\LivewirePowerGrid\PowerGridFields;
 
 final class InputText extends PowerGridComponent
 {
-    use PowerGridSeeder;
+    use InitialState;
 
     private function getSchema()
     {

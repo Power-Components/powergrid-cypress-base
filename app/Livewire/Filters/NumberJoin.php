@@ -15,7 +15,7 @@ use PowerComponents\LivewirePowerGrid\PowerGrid;
 use PowerComponents\LivewirePowerGrid\PowerGridComponent;
 use PowerComponents\LivewirePowerGrid\PowerGridFields;
 
-final class Number extends PowerGridComponent
+final class NumberJoin extends PowerGridComponent
 {
     use InitialState;
 
@@ -103,7 +103,7 @@ final class Number extends PowerGridComponent
     public function filters(): array
     {
         return [
-            Filter::number('calories'),
+            Filter::number('calories', 'datasources.calories'),
         ];
     }
 }
