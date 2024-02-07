@@ -2,8 +2,8 @@
 
 namespace App\Livewire\Filters;
 
-use App\Traits\Datasources;
-use App\Traits\InitialState;
+use App\Traits\Dish;
+use App\Traits\DishSeeder;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Schema;
@@ -17,11 +17,11 @@ use PowerComponents\LivewirePowerGrid\PowerGridFields;
 
 final class NumberJoin extends PowerGridComponent
 {
-    use InitialState;
+    use DishSeeder;
 
-    private function getSchema()
+    private function migrate(): void
     {
-        Schema::create('datasources', function (Blueprint $table) {
+        Schema::create('dishes', function (Blueprint $table) {
             $table->id();
             $table->string('name');
             $table->float('calories');
@@ -29,7 +29,7 @@ final class NumberJoin extends PowerGridComponent
         });
     }
 
-    private function getList(): array
+    private function getDishSeeder(): array
     {
         return [
             ['name' => 'Spicy Tofu Stir Fry', 'calories' => 130, 'created_at' => now()],
@@ -56,7 +56,7 @@ final class NumberJoin extends PowerGridComponent
 
     public function datasource()
     {
-        return Datasources::query();
+        return Dish::query();
     }
 
     public function setUp(): array
@@ -103,7 +103,7 @@ final class NumberJoin extends PowerGridComponent
     public function filters(): array
     {
         return [
-            Filter::number('calories', 'datasources.calories'),
+            Filter::number('calories', 'dishes.calories'),
         ];
     }
 }

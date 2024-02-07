@@ -2,8 +2,8 @@
 
 namespace App\Livewire\Filters;
 
-use App\Traits\Datasources;
-use App\Traits\InitialState;
+use App\Traits\Dish;
+use App\Traits\DishSeeder;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Schema;
@@ -17,11 +17,11 @@ use PowerComponents\LivewirePowerGrid\PowerGridFields;
 
 final class InputText extends PowerGridComponent
 {
-    use InitialState;
+    use DishSeeder;
 
-    private function getSchema()
+    private function migrate()
     {
-        Schema::create('datasources', function (Blueprint $table) {
+        Schema::create('dishes', function (Blueprint $table) {
             $table->id();
             $table->string('name');
             $table->string('email');
@@ -29,7 +29,7 @@ final class InputText extends PowerGridComponent
         });
     }
 
-    private function getList(): array
+    private function getDishSeeder(): array
     {
         return [
             ['name' => 'Luan', 'email' => 'luanfreitasdev@fakemail.com'],
@@ -51,7 +51,7 @@ final class InputText extends PowerGridComponent
 
     public function datasource()
     {
-        return Datasources::query();
+        return Dish::query();
     }
 
     public function setUp(): array

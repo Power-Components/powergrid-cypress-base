@@ -9,7 +9,7 @@ use Livewire\Attributes\Url;
 use PowerComponents\LivewirePowerGrid\Themes\Bootstrap5;
 use PowerComponents\LivewirePowerGrid\Themes\Tailwind;
 
-trait InitialState
+trait DishSeeder
 {
     #[Url]
     public string $powerGridTheme = 'tailwind';
@@ -30,21 +30,23 @@ trait InitialState
 
     protected function prepareDatasource(): void
     {
-        Schema::dropIfExists('datasources');
+        Schema::dropIfExists('dishes');
 
-        $this->getSchema();
+        $this->migrate();
 
-        Schema::disableForeignKeyConstraints();
-
-        DB::table('datasources')->truncate();
-
-        DB::table('datasources')->insert($this->getList());
-
-        Schema::enableForeignKeyConstraints();
+        DB::table('dishes')->insert($this->getDishSeeder());
     }
 }
 
-class Datasources extends Model
+class Dish extends Model
+{
+    public function category()
+    {
+        return $this->belongsTo(Category::class);
+    }
+}
+
+class Category extends Model
 {
 
 }
