@@ -28,11 +28,11 @@ final class Select extends PowerGridComponent
 
         $this->migrate();
 
-        DB::table('dishes')->insert($this->getDatasourceSeeder());
+        DB::table('dishes')->insert($this->getDishSeeder());
         DB::table('categories')->insert($this->getCategoryList());
     }
 
-    private function migrate()
+    private function migrate(): void
     {
         Schema::create('categories', function (Blueprint $table) {
             $table->id();
@@ -48,7 +48,7 @@ final class Select extends PowerGridComponent
         });
     }
 
-    private function getDatasourceSeeder(): array
+    private function getDishSeeder(): array
     {
         return [
             ['name' => 'Spicy Tofu Stir Fry', 'category_id' => 1],
@@ -131,9 +131,11 @@ final class Select extends PowerGridComponent
 
     public function filters(): array
     {
+        $categories = Schema::hasTable('categories') ? Category::all() : collect();
+
         return [
             Filter::select('category', 'category_id')
-                ->dataSource(Category::all())
+                ->dataSource($categories)
                 ->optionLabel('name')
                 ->optionValue('id'),
         ];

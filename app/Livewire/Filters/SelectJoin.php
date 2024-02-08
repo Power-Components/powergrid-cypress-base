@@ -28,7 +28,7 @@ final class SelectJoin extends PowerGridComponent
 
         $this->migrate();
 
-        DB::table('dishes')->insert($this->getDatasourceSeeder());
+        DB::table('dishes')->insert($this->getDishSeeder());
         DB::table('categories')->insert($this->getCategoryList());
     }
 
@@ -48,7 +48,7 @@ final class SelectJoin extends PowerGridComponent
         });
     }
 
-    private function getDatasourceSeeder(): array
+    private function getDishSeeder(): array
     {
         return [
             ['name' => 'Spicy Tofu Stir Fry', 'category_id' => 1, 'created_at' => now()],
@@ -136,9 +136,11 @@ final class SelectJoin extends PowerGridComponent
 
     public function filters(): array
     {
+        $categories = Schema::hasTable('categories') ? Category::all() : collect();
+
         return [
             Filter::select('category', 'dishes.category_id')
-                ->dataSource(Category::all())
+                ->dataSource($categories)
                 ->optionLabel('name')
                 ->optionValue('id'),
         ];
