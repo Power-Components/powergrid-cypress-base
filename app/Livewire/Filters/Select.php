@@ -51,16 +51,16 @@ final class Select extends PowerGridComponent
     private function getDatasourceSeeder(): array
     {
         return [
-            ['name' => 'Spicy Tofu Stir Fry', 'category_id' => 1, 'created_at' => now()],
-            ['name' => 'Quinoa Salad with Avocado', 'category_id' => 2, 'created_at' => now()],
-            ['name' => 'Mango Chicken Curry', 'category_id' => 3, 'created_at' => now()],
-            ['name' => 'Grilled Salmon with Lemon Dill Sauce', 'category_id' => 1, 'created_at' => now()],
-            ['name' => 'Vegetarian Buddha Bowl', 'category_id' => 2, 'created_at' => now()],
-            ['name' => 'Pasta Primavera', 'category_id' => 3, 'created_at' => now()],
-            ['name' => 'Blueberry Almond Smoothie Bowl', 'category_id' => 1, 'created_at' => now()],
-            ['name' => 'Grilled Vegetable Wrap', 'category_id' => 2, 'created_at' => now()],
-            ['name' => 'Chocolate Avocado Mousse', 'category_id' => 3, 'created_at' => now()],
-            ['name' => 'Caprese Salad', 'category_id' => 1, 'created_at' => now()],
+            ['name' => 'Spicy Tofu Stir Fry', 'category_id' => 1],
+            ['name' => 'Quinoa Salad with Avocado', 'category_id' => 2],
+            ['name' => 'Mango Chicken Curry', 'category_id' => 3],
+            ['name' => 'Grilled Salmon with Lemon Dill Sauce', 'category_id' => 1],
+            ['name' => 'Vegetarian Buddha Bowl', 'category_id' => 2],
+            ['name' => 'Pasta Primavera', 'category_id' => 3],
+            ['name' => 'Blueberry Almond Smoothie Bowl', 'category_id' => 1],
+            ['name' => 'Grilled Vegetable Wrap', 'category_id' => 2],
+            ['name' => 'Chocolate Avocado Mousse', 'category_id' => 3],
+            ['name' => 'Caprese Salad', 'category_id' => 1],
         ];
     }
 
