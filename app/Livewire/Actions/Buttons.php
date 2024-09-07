@@ -102,6 +102,7 @@ final class Buttons extends PowerGridComponent
                     'class' => '!text-green-500',
                 ])
                 ->slot('View')
+                ->dataCy('btn-view-'.$row->id)
                 ->class('text-slate-500 items-center flex gap-2 hover:text-slate-700 hover:bg-slate-100 p-1 px-2 rounded')
                 ->dispatch('clickToEdit', ['action' => 'view', 'name' => $row?->name]),
             Button::add('edit')
@@ -109,6 +110,7 @@ final class Buttons extends PowerGridComponent
                     'class' => '!text-blue-500',
                 ])
                 ->slot('Edit')
+                ->dataCy('btn-edit-'.$row->id)
                 ->class('text-slate-500 items-center flex gap-2 hover:text-slate-700 hover:bg-slate-100 p-1 px-2 rounded')
                 ->dispatch('clickToEdit', ['action' => 'edit', 'name' => $row?->name]),
             Button::add('download')
@@ -116,10 +118,12 @@ final class Buttons extends PowerGridComponent
                     'class' => '!text-slate-500',
                 ])
                 ->slot('Download')
+                ->dataCy('btn-download-'.$row->id)
                 ->class('text-slate-500 items-center flex gap-2 hover:text-slate-700 hover:bg-slate-100  p-1 px-2 rounded')
                 ->dispatch('clickToEdit', ['action' => 'download', 'name' => $row?->name]),
             Button::add('delete')
                 ->slot('Delete')
+                ->dataCy('btn-delete-'.$row->id)
                 ->icon('default-trash', [
                     'class' => 'text-red-500',
                 ])
