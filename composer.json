@@ -13,6 +13,12 @@
         "openspout/openspout": "^4.24.5",
         "power-components/livewire-powergrid": "6.x-dev"
     },
+    "repositories": [
+        {
+            "type": "path",
+            "url": "/Users/luan.freitas/Documents/powergrid-5x"
+        }
+    ],
     "require-dev": {
         "fakerphp/faker": "^1.23.1",
         "laradumps/laradumps": "^2.5.1",

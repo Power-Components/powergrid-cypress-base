@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Livewire\Actions;
+namespace App\Livewire;
 
 use App\Traits\Dish;
 use App\Traits\DishSeeder;
@@ -14,7 +14,7 @@ use PowerComponents\LivewirePowerGrid\Facades\PowerGrid;
 use PowerComponents\LivewirePowerGrid\PowerGridComponent;
 use PowerComponents\LivewirePowerGrid\PowerGridFields;
 
-final class Buttons extends PowerGridComponent
+class BaseTable extends PowerGridComponent
 {
     use DishSeeder;
 
@@ -92,50 +92,5 @@ final class Buttons extends PowerGridComponent
 
             Column::action('Actions')
         ];
-    }
-
-    public function actions($row): array
-    {
-        return [
-            Button::add('view')
-                ->icon('default-eye', [
-                    'class' => '!text-green-500',
-                ])
-                ->slot('View')
-                ->dataCy('btn-view-'.$row->id)
-                ->class('text-slate-500 items-center flex gap-2 hover:text-slate-700 hover:bg-slate-100 p-1 px-2 rounded')
-                ->dispatch('clickToEdit', ['action' => 'view', 'name' => $row?->name]),
-
-            Button::add('edit')
-                ->icon('default-pencil', [
-                    'class' => '!text-blue-500',
-                ])
-                ->slot('Edit')
-                ->dataCy('btn-edit-'.$row->id)
-                ->class('text-slate-500 items-center flex gap-2 hover:text-slate-700 hover:bg-slate-100 p-1 px-2 rounded')
-                ->dispatch('clickToEdit', ['action' => 'edit', 'name' => $row?->name]),
-            Button::add('download')
-                ->icon('default-download', [
-                    'class' => '!text-slate-500',
-                ])
-                ->slot('Download')
-                ->dataCy('btn-download-'.$row->id)
-                ->class('text-slate-500 items-center flex gap-2 hover:text-slate-700 hover:bg-slate-100  p-1 px-2 rounded')
-                ->dispatch('clickToEdit', ['action' => 'download', 'name' => $row?->name]),
-            Button::add('delete')
-                ->slot('Delete')
-                ->dataCy('btn-delete-'.$row->id)
-                ->icon('default-trash', [
-                    'class' => 'text-red-500',
-                ])
-                ->class('text-slate-500 items-center flex gap-2 hover:text-slate-700 hover:bg-slate-100 p-1 px-2 rounded')
-                ->dispatch('clickToEdit', ['action' => 'delete', 'name' => $row?->name]),
-        ];
-    }
-
-    #[On('clickToEdit')]
-    public function clickToEdit(string $action, string $name): void
-    {
-        $this->js("console.log(\"Editing #{$action} -  {$name}\")");
     }
 }
