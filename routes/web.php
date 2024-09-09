@@ -1,5 +1,9 @@
 <?php
 
+use App\Livewire\ActionRules\ButtonAttributes;
+use App\Livewire\ActionRules\ButtonBladeComponent;
+use App\Livewire\ActionRules\ButtonDisable;
+use App\Livewire\ActionRules\ButtonHide;
 use App\Livewire\Actions\Can;
 use App\Livewire\Actions\Disable;
 use App\Livewire\Actions\Attributes;
@@ -20,3 +24,9 @@ Route::get('/filters-select-join', SelectJoin::class);
 Route::get('/actions-attributes', Attributes::class);
 Route::get('/actions-can', Can::class);
 Route::get('/actions-disable', Disable::class);
+
+# action rules
+Route::get('/action-rules-button-hide', ButtonHide::class);
+Route::get('/action-rules-button-disable', ButtonDisable::class);
+Route::get('/action-rules-button-setattribute', ButtonAttributes::class);
+Route::get('/action-rules-button-bladecomponent', ButtonBladeComponent::class);
