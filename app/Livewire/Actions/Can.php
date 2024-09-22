@@ -8,6 +8,8 @@ use PowerComponents\LivewirePowerGrid\Button;
 
 final class Can extends BaseTable
 {
+    public string $tableName = 'actions-can';
+
     public function actions($row): array
     {
         return [

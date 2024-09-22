@@ -19,6 +19,8 @@ final class SelectJoin extends PowerGridComponent
 {
     use DishSeeder;
 
+    public string $tableName = 'filters-select-join';
+
     protected function prepareDatasource(): void
     {
         Schema::dropIfExists('dishes');

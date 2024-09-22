@@ -17,6 +17,8 @@ final class NumberJoin extends PowerGridComponent
 {
     use DishSeeder;
 
+    public string $tableName = 'filters-number-join';
+
     private function migrate(): void
     {
         Schema::create('dishes', function (Blueprint $table) {

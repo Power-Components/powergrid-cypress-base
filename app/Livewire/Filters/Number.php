@@ -17,6 +17,8 @@ final class Number extends PowerGridComponent
 {
     use DishSeeder;
 
+    public string $tableName = 'filters-number';
+
     private function migrate()
     {
         Schema::create('dishes', function (Blueprint $table) {

@@ -9,6 +9,8 @@ use PowerComponents\LivewirePowerGrid\Facades\Rule;
 
 final class ButtonDisable extends BaseTable
 {
+    public string $tableName = 'button-disable';
+
     public function actions($row): array
     {
         return [

@@ -9,6 +9,8 @@ use PowerComponents\LivewirePowerGrid\Facades\Rule;
 
 final class ButtonAttributes extends BaseTable
 {
+    public string $tableName = 'button-attributes';
+
     public function actions($row): array
     {
         return [

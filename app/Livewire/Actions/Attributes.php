@@ -8,6 +8,8 @@ use PowerComponents\LivewirePowerGrid\Button;
 
 final class Attributes extends BaseTable
 {
+    public string $tableName = 'actions-attributes';
+
     public function actions($row): array
     {
         return [

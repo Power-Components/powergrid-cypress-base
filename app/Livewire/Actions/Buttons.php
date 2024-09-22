@@ -18,6 +18,8 @@ final class Buttons extends PowerGridComponent
 {
     use DishSeeder;
 
+    public string $tableName = 'actions-buttons';
+
     private function migrate(): void
     {
         Schema::create('dishes', function (Blueprint $table) {

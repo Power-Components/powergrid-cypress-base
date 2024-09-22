@@ -19,6 +19,8 @@ final class Select extends PowerGridComponent
 {
     use DishSeeder;
 
+    public string $tableName = 'filters-select';
+
     protected function prepareDatasource(): void
     {
         Schema::dropIfExists('dishes');

@@ -15,6 +15,8 @@ use PowerComponents\LivewirePowerGrid\PowerGridFields;
 
 final class InputText extends PowerGridComponent
 {
+    public string $tableName = 'filters-input-text';
+
     use DishSeeder;
 
     private function migrate(): void

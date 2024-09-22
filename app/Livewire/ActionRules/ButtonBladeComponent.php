@@ -9,6 +9,8 @@ use PowerComponents\LivewirePowerGrid\Facades\Rule;
 
 final class ButtonBladeComponent extends BaseTable
 {
+    public string $tableName = 'button-blade-component';
+
     public function actions($row): array
     {
         return [

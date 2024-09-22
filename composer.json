@@ -4,12 +4,6 @@
     "description": "The skeleton application for the Laravel framework.",
     "keywords": ["laravel", "framework"],
     "license": "MIT",
-    "repositories": [
-        {
-            "type": "path",
-            "url" : "/Users/luan.freitas/Documents/powergrid-5x"
-        }
-    ],
     "require": {
         "php": "^8.2",
         "laravel/framework": "^11.22",

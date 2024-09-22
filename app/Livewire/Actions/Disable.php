@@ -8,6 +8,8 @@ use PowerComponents\LivewirePowerGrid\Button;
 
 final class Disable extends BaseTable
 {
+    public string $tableName = 'actions-disable';
+
     public function actions($row): array
     {
         return [

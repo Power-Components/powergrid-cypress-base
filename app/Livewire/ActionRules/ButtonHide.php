@@ -9,6 +9,8 @@ use PowerComponents\LivewirePowerGrid\Facades\Rule;
 
 final class ButtonHide extends BaseTable
 {
+    public string $tableName = 'button-hide';
+
     public function actions($row): array
     {
         return [
