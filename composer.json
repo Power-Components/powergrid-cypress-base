@@ -11,7 +11,7 @@
         "laravel/tinker": "^2.9",
         "livewire/livewire": "^3.5.6",
         "openspout/openspout": "^4.24.5",
-        "power-components/livewire-powergrid": "6.x-dev"
+        "power-components/livewire-powergrid": "dev-auto-inject-assets"
     },
     "require-dev": {
         "fakerphp/faker": "^1.23.1",
