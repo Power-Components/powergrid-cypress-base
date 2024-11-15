@@ -4,6 +4,7 @@ use App\Livewire\ActionRules\ButtonAttributes;
 use App\Livewire\ActionRules\ButtonBladeComponent;
 use App\Livewire\ActionRules\ButtonDisable;
 use App\Livewire\ActionRules\ButtonHide;
+use App\Livewire\ActionRules\SetUpToggleColumns;
 use App\Livewire\Actions\Can;
 use App\Livewire\Actions\Disable;
 use App\Livewire\Actions\Attributes;
@@ -30,3 +31,5 @@ Route::get('/action-rules-button-hide', ButtonHide::class);
 Route::get('/action-rules-button-disable', ButtonDisable::class);
 Route::get('/action-rules-button-setattribute', ButtonAttributes::class);
 Route::get('/action-rules-button-bladecomponent', ButtonBladeComponent::class);
+
+Route::get('/setup-toggle-columns', SetUpToggleColumns::class);

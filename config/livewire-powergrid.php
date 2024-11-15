@@ -106,15 +106,4 @@ return [
             'csv'  => \PowerComponents\LivewirePowerGrid\Components\Exports\OpenSpout\v4\ExportToCsv::class,
         ]
     ],
-
-    /*
-    |--------------------------------------------------------------------------
-    | Auto-Inject Assets
-    |--------------------------------------------------------------------------
-    |
-    | PowerGrid will automatically inject assets if set to "true"
-    |
-    */
-
-    'auto_inject_assets' => true,
 ];

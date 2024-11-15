@@ -9,7 +9,7 @@
         "laravel/framework": "^11.22",
         "laravel/sanctum": "^4.0.2",
         "laravel/tinker": "^2.9",
-        "livewire/livewire": "^3.5.6",
+        "livewire/livewire": "^3.5",
         "openspout/openspout": "^4.24.5",
         "power-components/livewire-powergrid": "6.x-dev"
     },
@@ -63,6 +63,12 @@
             "php-http/discovery": true
         }
     },
+    "repositories": [
+        {
+            "type": "path",
+            "url": "/Users/luan.freitas/Dev/power-components/powergrid"
+        }
+    ],
     "minimum-stability": "dev",
     "prefer-stable": true
 }
