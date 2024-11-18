@@ -13,6 +13,7 @@ use App\Livewire\Filters\Number;
 use App\Livewire\Filters\NumberJoin;
 use App\Livewire\Filters\Select;
 use App\Livewire\Filters\SelectJoin;
+use App\Livewire\Header\HeaderCan;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/filters-input-text', InputText::class);
@@ -33,3 +34,5 @@ Route::get('/action-rules-button-setattribute', ButtonAttributes::class);
 Route::get('/action-rules-button-bladecomponent', ButtonBladeComponent::class);
 
 Route::get('/setup-toggle-columns', SetUpToggleColumns::class);
+
+Route::get('/header-can', HeaderCan::class);
