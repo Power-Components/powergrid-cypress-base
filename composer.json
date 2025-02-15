@@ -63,12 +63,6 @@
             "php-http/discovery": true
         }
     },
-    "repositories": [
-        {
-            "type": "path",
-            "url": "/Users/luan.freitas/Dev/power-components/powergrid"
-        }
-    ],
     "minimum-stability": "dev",
     "prefer-stable": true
 }
